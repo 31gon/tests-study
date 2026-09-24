@@ -28,6 +28,8 @@ public class Task {
 
     private LocalDateTime createdAt;
 
+    private LocalDateTime overdueAt;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
@@ -48,7 +50,12 @@ public class Task {
     private List<Label> labels = new ArrayList<>();
 
     @PrePersist
-    public void onCreate() {
-        this.createdAt = LocalDateTime.now();
+    public void onCreate() { this.createdAt = LocalDateTime.now(); }
+
+    public void setDueDate(LocalDateTime localDate) {
+        overdueAt = localDate;
+    }
+    public boolean isOverdue() {
+        return overdueAt != null && LocalDateTime.now().isAfter(overdueAt);
     }
 }
