@@ -1,8 +1,7 @@
-package dev.triacontakaihenagon.testsstudy;
+package dev.triacontakaihenagon.testsstudy.repository;
 
 import dev.triacontakaihenagon.testsstudy.entity.Task;
 import dev.triacontakaihenagon.testsstudy.entity.TaskStatus;
-import dev.triacontakaihenagon.testsstudy.repository.TaskRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;

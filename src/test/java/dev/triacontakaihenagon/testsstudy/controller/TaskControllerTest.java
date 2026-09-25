@@ -1,6 +1,5 @@
-package dev.triacontakaihenagon.testsstudy;
+package dev.triacontakaihenagon.testsstudy.controller;
 
-import dev.triacontakaihenagon.testsstudy.controller.TaskController;
 import dev.triacontakaihenagon.testsstudy.dto.TaskResponse;
 import dev.triacontakaihenagon.testsstudy.entity.Task;
 import dev.triacontakaihenagon.testsstudy.mapper.TaskMapper;
