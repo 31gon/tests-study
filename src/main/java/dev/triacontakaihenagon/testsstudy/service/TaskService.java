@@ -11,9 +11,11 @@ import dev.triacontakaihenagon.testsstudy.repository.TaskRepository;
 import dev.triacontakaihenagon.testsstudy.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class TaskService {
@@ -91,5 +93,11 @@ public class TaskService {
     public void deleteTask(Long id) {
         if (taskRepository.existsById(id)) taskRepository.deleteById(id);
         else throw new TaskNotFoundException("Task with " + id + " not found ");
+    }
+
+    public List<Task> getOverdueTasks() {
+        return taskRepository.findAll().stream()
+                .filter(Task::isOverdue)
+                .collect(Collectors.toList());
     }
 }
